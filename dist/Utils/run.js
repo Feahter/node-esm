@@ -1,34 +1,31 @@
 /*
  * @Author: your name
  * @Date: 2021-07-27 16:48:49
- * @LastEditTime: 2021-07-27 17:31:40
+ * @LastEditTime: 2021-08-20 17:46:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node/Utils/run.js
  */
-import { exec, execSync } from 'child_process'
-
-let run = (path) => {
-  let result
+import { exec } from "child_process";
+const run = (path) => {
+  let result;
   exec(`node ${path}`, (err, data) => {
     if (err) {
-      result = err
+      result = err;
     }
-    result = data
-  })
-  return result
-}
-
-let callBack = (path, callback) => {
+    result = data;
+  });
+  return result;
+};
+const callBack = (path, fn) => {
   exec(`node ${path}`, (err, data) => {
     if (err) {
-      callback(err)
+      fn(err);
     }
-    callback(data)
-  })
-}
-
+    fn(data);
+  });
+};
 export default {
   run,
   callBack,
-}
+};

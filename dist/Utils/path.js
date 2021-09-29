@@ -7,13 +7,12 @@
  * @FilePath: /node/Utils/path.js
  */
 import {
-  resolve, //解析路径
-  join, //组合路径
+  resolve, // 解析路径
+  join, // 组合路径
   dirname,
-} from 'path'
-
+} from "path";
 export default {
-    resolve, //解析路径
-    join, //组合路径
-    dirname //根目录
-}
+  resolve,
+  join,
+  dirname, // 根目录
+};
