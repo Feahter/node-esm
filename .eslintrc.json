@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "commonjs": true
   },
   "extends": ["airbnb-base"],
   "parser": "@typescript-eslint/parser",
@@ -14,6 +15,7 @@
     "import/no-unresolved": ["warn"],
     "import/extensions": ["warn"],
     "import/no-named-default": ["warn"],
-    "quotes": ["warn"]
+    "quotes": ["warn"],
+    "comma-dangle": ["warn"]
   }
 }

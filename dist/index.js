@@ -1,16 +1,18 @@
 /*
  * @Author: your name
- * @Date: 2021-07-26 14:55:33
- * @LastEditTime: 2021-09-29 15:46:56
+ * @Date: 2021-09-29 15:52:23
+ * @LastEditTime: 2021-11-02 17:18:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: /node/index.js
+ * @FilePath: /node/src/index.ts
  */
 import Utils from "./Utils/index.js";
-const outputPath = "./dist";
-const file = Utils.path.resolve(`${outputPath}/Code/hello.js`);
-const dirName = Utils.getCurPath(outputPath);
-const fn = (data) => {
-  Utils.toWriteData(`${dirName}/result.js`, data);
-};
-Utils.run.callBack(file, fn);
+const dirName = Utils.getCurPath(); // 项目路径
+const url = `${dirName}/dist/Code`; // 执行文件夹
+const data = Utils.fs.readdirSync(url); // 读取文件名列表
+/** 批量执行 */
+data.forEach((i) => {
+  if (i.endsWith(".js")) {
+    Utils.runAndAppendData(`Code/${i}`, "result"); // 执行指定文件，追加到同级文件内
+  }
+});

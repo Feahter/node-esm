@@ -1,2 +1,2 @@
-export declare const getCurPath: (path: string) => string;
+export declare const getCurPath: (path?: string | undefined) => string;
 export default getCurPath;
