@@ -399,13 +399,13 @@ declare const Utils: {
     runFilePath: string,
     writeFileName: string,
     runBasePath?: string | undefined,
-    writeBasePath?: undefined
+    writeBasePath?: string | undefined
   ) => void;
   runAndAppendData: (
     runFilePath: string,
     writeFileName: string,
     runBasePath?: string | undefined,
-    writeBasePath?: undefined
+    writeBasePath?: string | undefined
   ) => void;
 };
 export default Utils;
