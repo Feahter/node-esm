@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-27 16:48:49
- * @LastEditTime: 2021-08-20 17:46:31
+ * @LastEditTime: 2021-11-22 15:15:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node/Utils/run.js
@@ -20,12 +20,18 @@ const run = (path: string) => {
 };
 
 const callBack = (path: string, fn: Function) => {
-  exec(`node ${path}`, (err, data) => {
-    if (err) {
-      fn(err);
+  exec(
+    `node ${path}`,
+    {
+      maxBuffer: 5 * 1024 * 1024,
+    },
+    (err, data) => {
+      if (err) {
+        fn(err);
+      }
+      fn(data);
     }
-    fn(data);
-  });
+  );
 };
 
 export default {
