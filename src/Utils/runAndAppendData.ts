@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-11-02 13:49:00
- * @LastEditTime: 2021-11-03 09:56:02
+ * @LastEditTime: 2021-11-25 19:03:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /node/src/Utils/runAndWriteData.ts
@@ -19,9 +19,9 @@ export const runAndWriteData = (
   const file = Utils.path.resolve(`${outputPath}/${runFilePath}`); // 执行文件
   const dirName = Utils.path.dirname(file);
   const fn = (data: any) => {
-    let writePath = `${dirName}/${writeFileName}.js`;
+    let writePath = `${dirName}/${writeFileName}`;
     if (writeBasePath) {
-      writePath = `${writeBasePath}/${writeFileName}.js`;
+      writePath = `${writeBasePath}/${writeFileName}`;
     }
     Utils.toAppendData(writePath, data); // 写入文件
   };
